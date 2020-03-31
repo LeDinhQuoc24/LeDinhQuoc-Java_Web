@@ -1,4 +1,4 @@
-package Bai1;
+package Demo;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
