@@ -14,7 +14,9 @@ public class Ung_dung_Product_Discount_CalculatorAssignment extends HttpServlet 
         String product_description = request.getParameter("description");
         float price = Float.parseFloat(request.getParameter("price"));
         float discount_percent = Float.parseFloat(request.getParameter("discount_percent"));
-        float discount_amount=price*discount_percent/10;
+        float discount_amount=price*discount_percent/100;
+        float total=price-discount_amount;
+
 
         PrintWriter writer = response.getWriter();
         writer.println("<html>");
@@ -22,6 +24,7 @@ public class Ung_dung_Product_Discount_CalculatorAssignment extends HttpServlet 
         writer.println("<h1>List Price: " + price+ "</h1>");
         writer.println("<h1>Discount Percent: " + discount_percent+ "</h1>");
         writer.println("<h1>Discount Amount: " + discount_amount+ "</h1>");
+        writer.println("<h1>Total: " + total+ "</h1>");
         writer.println("</html>");
     }
 
